@@ -17,7 +17,8 @@ return new class extends Migration
             $table->text('ringkasan');
             $table->integer('tahun');
             $table->string('poster');
-            $table->integer('genre_id')->index();
+            $table->unsignedBigInteger('genre_id');
+            $table->foreign('genre_id')->references('id')->on('genre');
         });
     }
 

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('kritik', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->index();
-            $table->integer('film_id')->index();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('film_id');
+            $table->foreign('film_id')->references('id')->on('films');
             $table->text('content');
             $table->integer('point');
         });
