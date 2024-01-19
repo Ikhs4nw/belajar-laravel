@@ -15,21 +15,15 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/home', [HomeController::class, 'index']);
-
+/*
 Route::get('/register', [AuthController::class, 'register']);
 
 Route::get('/welcome', [AuthController::class, 'welcome']);
 
 Route::post('/welcome', [AuthController::class, 'postData']);
+*/
 
 Route::get('/dashboard', [HomeController::class, 'dashboard']);
 

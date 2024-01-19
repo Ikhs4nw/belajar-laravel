@@ -1,5 +1,10 @@
 @extends('layouts/main')
 
+@push('dt-css')
+<link rel="stylesheet" href="admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+@endpush
+
+
 @section('content-header')
      <!-- Content Header (Page header) -->
      <section class="content-header">
@@ -8,7 +13,7 @@
           <small>advanced tables</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="{{ 'home' }}"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a href="{{ '' }}"><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a href="#">Tables</a></li>
           <li class="active">Data tables</li>
         </ol>
@@ -469,6 +474,9 @@
 @endsection
 
 @push('child-scripts')
+<!-- DataTables -->
+<script src="admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
     $(function () {
       $('#example1').DataTable();
