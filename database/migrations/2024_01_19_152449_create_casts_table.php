@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cast', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama', 45);
             $table->integer('umur');
             $table->text('bio');
         });
