@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CastController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -27,6 +28,13 @@ Route::post('/welcome', [AuthController::class, 'postData']);
 
 Route::get('/dashboard', [HomeController::class, 'dashboard']);
 
-Route::get('/table', [AuthController::class, 'table']);
+// Route::get('/table', [AuthController::class, 'table']);
 
-Route::get('/data-tables', [AuthController::class, 'data_table']);
+// Route::get('/data-tables', [AuthController::class, 'data_table']);
+
+Route::get('/cast', [CastController::class, 'index']);
+Route::post('/cast/save', [CastController::class, 'store']);
+Route::get('/cast/{cast_id}/show', [CastController::class, 'show']);
+Route::get('/cast/{cast_id}/edit', [CastController::class, 'edit']);
+Route::get('/cast/{cast_id}/destroy', [CastController::class, 'destroy']);
+
