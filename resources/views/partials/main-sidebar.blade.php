@@ -28,14 +28,13 @@
         <li class="{{ ($title === 'Dashboard') ? 'active' : '' }}"><a href="{{ 'dashboard' }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="treeview {{ ($title === 'Halaman Table' || $title === 'Halaman Data Table') ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
+            <i class="fa fa-folder"></i> <span>Master Data</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ '/table' }}"><i class="fa fa-circle-o"></i>Simple Tables</a></li>
-            <li><a href="{{ '/data-tables' }}"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="{{ '/cast' }}"><i class="fa fa-circle-o"></i> Data Cast</a></li>
           </ul>
         </li>
       </ul>
