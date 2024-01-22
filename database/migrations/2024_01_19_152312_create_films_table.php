@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('tahun');
             $table->string('poster', 45);
             $table->unsignedBigInteger('genre_id');
-            $table->foreign('genre_id')->references('id')->on('genre');
+            $table->foreign('genre_id')->references('id')->on('genres');
         });
     }
 

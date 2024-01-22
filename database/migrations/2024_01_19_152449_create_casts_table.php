@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cast', function (Blueprint $table) {
+        Schema::create('casts', function (Blueprint $table) {
             $table->id();
             $table->string('nama', 45);
             $table->integer('umur');
             $table->text('bio');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
