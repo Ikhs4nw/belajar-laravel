@@ -8,7 +8,8 @@
           </button>
         </div>
         <div class="modal-body">
-            {!! Form::open(['url' => '/cast/save']) !!}
+            {!! Form::open(['url' => '/cast/save', 'method' => 'POST']) !!}
+            {{ csrf_field() }}
             <div class="mb-3">
                 {!! Form::label('name_cast', 'Name Cast') !!}
                 {!! Form::text('name_cast', '', ['class' => 'form-control', 'placeholder' => 'Input Name Cast', 'required']) !!}

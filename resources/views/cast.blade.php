@@ -51,13 +51,14 @@
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->umur }}</td>
                     <td>{{ $item->bio }}</td>
-                    <td>
-                        <a href="{{ url('/cast/' . $item->id) . '/show' }}" title="View Cast"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                        <a href="{{ url('/cast/' . $item->id . '/edit') }}" title="Edit Cast"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                    <td style="text-align: center;">
+                        <a href="#edit{{ $item->id }}" data-toggle="modal" title="Edit Cast"><button class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                         <a href="{{ url('/cast/' . $item->id . '/destroy') }}" title="Delete Cast" onclick="return confirm('Confirm delete?')"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button></a>
+                        <a href="#show{{ $item->id }}" data-toggle="modal" title="Preview Data"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                     </td>
-                  </tr>
                   @php($no++)
+                  @include('partials/cast.cast-edit');
+                  @include('partials/cast.cast-show')
                 @endforeach
               </tbody>
             </table>
@@ -86,6 +87,7 @@
     })
 </script>
 @endpush
+
 
 
 
