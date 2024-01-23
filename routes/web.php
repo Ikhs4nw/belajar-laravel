@@ -34,7 +34,6 @@ Route::get('/dashboard', [HomeController::class, 'dashboard']);
 
 Route::get('/cast', [CastController::class, 'index']);
 Route::post('/cast/save', [CastController::class, 'store']);
-Route::get('/cast/{cast_id}/show', [CastController::class, 'show']);
-Route::get('/cast/{cast_id}/edit', [CastController::class, 'edit']);
+Route::post('/cast/{cast_id}/update', [CastController::class, 'update']);
 Route::get('/cast/{cast_id}/destroy', [CastController::class, 'destroy']);
 
