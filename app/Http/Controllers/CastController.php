@@ -17,14 +17,6 @@ class CastController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-       //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -34,40 +26,29 @@ class CastController extends Controller
         $cast->umur = $request->input('age_cast');
         $cast->bio = $request->input('bio_cast');
         $cast->save();
-
-        return redirect('/cast');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return redirect('/cast')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $cast_id)
     {
-        //
+        $cast = Cast::findOrFail($cast_id);
+        $cast->update([
+            'nama'     => $request->name_cast,
+            'umur'   => $request->age_cast,
+            'bio'   => $request->bio_cast
+        ]);
+        return redirect('/cast')->with(['success' => 'Data Berhasil Diupdate!']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($cast_id)
     {
-        $query = Cast::table('cast')->where('id', $id)->delete();
-        return redirect('/cast');
+        $query = Cast::findOrFail($cast_id)->delete();
+        return redirect('/cast')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
