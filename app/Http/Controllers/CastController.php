@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Cast;
 use Illuminate\Http\Request;
 
+//return type View
+use Illuminate\View\View;
+
 class CastController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class CastController extends Controller
     public function index()
     {
         $cast = Cast::all();
-        return view('cast', ['title' => 'Data Cast'], ['cast' => $cast]);
+        return view('cast.vindex', ['title' => 'Data Cast'], compact('cast'));
     }
 
     /**
