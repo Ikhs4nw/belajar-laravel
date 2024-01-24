@@ -12,7 +12,7 @@ class Cast extends Model
     //     'nama',
     //     'umur',
     //     'bio',
-    // ];
+    // ];cd 
 
     protected $guarded = ['id'];
 }
