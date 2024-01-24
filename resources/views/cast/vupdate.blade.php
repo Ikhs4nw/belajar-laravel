@@ -1,5 +1,5 @@
 <!-- Modal -->
-@foreach ($cast as $item)
+@foreach ($data_cast as $item)
 <div class="modal fade" id="edit{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

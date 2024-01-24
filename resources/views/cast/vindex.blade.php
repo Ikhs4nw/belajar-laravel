@@ -44,7 +44,7 @@
               </tr>
               </thead>
               <tbody>
-                @foreach ($cast as $key => $item)
+                @foreach ($data_cast as $key => $item)
                   <tr>
                     <td class="text-center">{{ $key + 1 }}</td>
                     <td>{{ $item->nama }}</td>
