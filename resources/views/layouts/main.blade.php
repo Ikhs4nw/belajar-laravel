@@ -103,9 +103,30 @@
 <script src="admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="admin/dist/js/demo.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- toaster js -->
+{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> --}}
+<script src="admin/dist/js/sweetalert.min.js"></script>
 <script>
-    //message with toastr
+    //sweet allert succes
+    @if(session()->has('success'))
+        swal({
+            icon: 'success',
+            title: 'Berhasil',
+            text: '{{ session('success') }}',
+            
+        });
+    @elseif(session()->has('error'))
+        swal({
+            icon: 'error',
+            title: 'Gagal',
+            text: '{{ session('error') }}'
+        });
+    @endif
+</script>
+
+<!-- toaster message -->
+{{-- <script>
+    // //message with toastr
     @if(session()->has('success'))
 
         toastr.success('{{ session('success') }}', 'BERHASIL!');
@@ -115,6 +136,6 @@
         toastr.error('{{ session('error') }}', 'GAGAL!');
 
     @endif
-</script>
+</script> --}}
 </body>
 </html>

@@ -25,7 +25,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ ($title === 'Dashboard') ? 'active' : '' }}"><a href="{{ 'dashboard' }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="{{ ($title === 'Dashboard') ? 'active' : '' }}"><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="treeview {{ ($title === 'Halaman Table' || $title === 'Halaman Data Table') ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Master Data</span>
@@ -34,7 +34,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ '/cast' }}"><i class="fa fa-circle-o"></i> Data Cast</a></li>
+            <li><a href="{{ url('/cast') }}"><i class="fa fa-circle-o"></i> Data Cast</a></li>
           </ul>
         </li>
       </ul>
